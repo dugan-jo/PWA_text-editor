@@ -12,8 +12,7 @@ module.exports = () => {
     entry: {
       main: "./src/js/index.js",
       install: "./src/js/install.js",
-      editor: "./src/js/header.js",
-      index: "./src/js/index.js",
+      header: "./src/js/header.js",
     },
     output: {
       filename: "[name].bundle.js",
@@ -33,18 +32,29 @@ module.exports = () => {
         inject: true,
         name: "Text Editor",
         short_name: "TE",
-        description: "NEver go without notes!",
-        background_color: "#225ca3",
+        description: "Never go without notes!",
+        background_color: "#000000",
         theme_color: "#225ca3",
         start_url: "/",
         publicPath: "/",
-        // icons: [
-        //   {
-        //     // src: path.resolve("src/images/logo.png"),
-        //     sizes: [96, 128, 192, 256, 384, 512],
-        //     destination: path.join("assets", "icons"),
-        //   },
-        // ],
+        display: "standalone",
+        crossorigin: "use-credentials",
+        icons: [
+          {
+            // src: path.resolve("src/images/logo.png"),
+            src: path.resolve("./src/images/logo.png"),
+            sizes: [96, 128, 192, 256, 384, 512],
+          },
+          {
+            src: path.resolve("./src/images/logo.png"),
+            size: "1024x1024",
+          },
+          {
+            src: path.resolve("src/images/logo.png"),
+            size: "1024x1024",
+            purpose: "maskable",
+          },
+        ],
       }),
     ],
 
