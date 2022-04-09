@@ -12,7 +12,7 @@ module.exports = () => {
     entry: {
       main: "./src/js/index.js",
       install: "./src/js/install.js",
-      header: "./src/js/header.js",
+      // header: "./src/js/header.js",
     },
     output: {
       filename: "[name].bundle.js",
@@ -30,29 +30,18 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: "Text Editor",
-        short_name: "TE",
-        description: "Never go without notes!",
+        name: "text-editor",
+        short_name: "JATE",
+        description: "Just Another Text Editor!",
         background_color: "#000000",
         theme_color: "#225ca3",
         start_url: "/",
         publicPath: "/",
-        display: "standalone",
-        crossorigin: "use-credentials",
         icons: [
           {
-            // src: path.resolve("src/images/logo.png"),
-            src: path.resolve("./src/images/logo.png"),
-            sizes: [96, 128, 192, 256, 384, 512],
-          },
-          {
-            src: path.resolve("./src/images/logo.png"),
-            size: "1024x1024",
-          },
-          {
             src: path.resolve("src/images/logo.png"),
-            size: "1024x1024",
-            purpose: "maskable",
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join("assets", "icons"),
           },
         ],
       }),
